@@ -19,7 +19,7 @@ public class GameState extends State{
         super(handler);
         map = new Map(handler,"res/Worlds/World.txt");
         handler.setMap(map);
-        player = new Player(handler, 100, 100);
+        player = new Player(handler, 200, 200);
         bat = new Enemy(handler, 100, 100);
     }
 

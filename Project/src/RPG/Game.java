@@ -79,7 +79,7 @@ public class Game implements Runnable{
         State.setState(gameState);
 
 
-        gameCamera = new GameCamera(this,0 , 0);
+        gameCamera = new GameCamera(this,20 , 20);
     }
 
 
@@ -140,18 +140,15 @@ public class Game implements Runnable{
                 timer = 0;
             }
         }
-        stop();
     }
 
-
-    public synchronized void start() {
+    public void start() {
         if (isRunning) {return;}
         isRunning = true;
-        thread = new Thread(this);
-        thread.start();
+        run();
     }
 
-    public synchronized void stop() {
+    /*public synchronized void stop() {
         if (!isRunning) {return;}
         isRunning = false;
         try {
@@ -159,5 +156,5 @@ public class Game implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
